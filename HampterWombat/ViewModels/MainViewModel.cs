@@ -1,6 +1,23 @@
-﻿namespace HampterWombat.ViewModels
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using HampterWombat.Common;
+using HampterWombat.Domain;
+
+namespace HampterWombat.ViewModels
 {
-    partial class MainViewModel
+    public partial class MainViewModel : ObservableObject
     {
+        [ObservableProperty]
+        DovbocoinData dovboData;
+        public MainViewModel()
+        {
+            DovboData = JsonManipulator.TryRetrieveDovbocoinData();
+        }
+
+        [RelayCommand]
+        void IncrementCount()
+        {
+            DovboData.Balance += DovboData.ClickValue;
+        }
     }
 }
