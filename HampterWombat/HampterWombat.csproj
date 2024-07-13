@@ -40,10 +40,13 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
-
+		<MauiIcon Include="Resources\AppIcon\appicon.png" Color="#512BD4" />
+		<!-- Resources used for appicon.png:
+		https://www.freevector.com/animal-set-icon-41100
+		https://www.vecteezy.com/vector-art/5630579-pixel-art-glasses-isolated-on-white-background -->
+		
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\dvb_coin_splash.png" Color="#617856" BaseSize="148,148" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -57,6 +60,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\wombat.jpg" />
+	  <None Remove="Resources\Splash\dvb_coin_splash.png" />
 	</ItemGroup>
 
 	<ItemGroup>

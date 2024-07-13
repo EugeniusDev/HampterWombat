@@ -6,52 +6,58 @@
              xmlns:common="clr-namespace:HampterWombat.Common"
              x:DataType="viewmodel:MainViewModel">
 
-    <Grid RowDefinitions="2*, 6*, 1*" RowSpacing="55"
+    <Grid RowDefinitions="2*, 6*, 1.4*" RowSpacing="55"
         Padding="10,10">
-        <Frame BackgroundColor="#558855" CornerRadius="15">
+        <Frame BackgroundColor="#558855" CornerRadius="15" BorderColor="#77aa77">
             <VerticalStackLayout>
                 <Label
                     Text="DVB" FontSize="24"
-                    TextColor="#cca700"
+                    TextColor="#FBE432"
                     Style="{StaticResource SubHeadline}" />
                 <common:BalanceLabel
                     Text="{Binding DovboData.Balance}"
-                    TextColor="#ffd700"
+                    TextColor="#C4FA7D"
                     TextChanged="BalanceLabel_TextChanged"
-                    FontSize="50" FontAttributes="Bold"
+                    FontSize="54" FontAttributes="Bold"
                     Style="{StaticResource Headline}" />
             </VerticalStackLayout>
         </Frame>
 
         <ImageButton Grid.Row="1" Source="wombat.jpg" HeightRequest="305"
             Aspect="AspectFill" ZIndex="1"
-            Command="{Binding IncrementCountCommand}"/>
+            Command="{Binding IncrementBalanceCommand}"
+            x:Name="WombatImageBtn" Clicked="WombatImageBtn_Clicked"/>
 
         <Button Grid.Row="2" HeightRequest="100" Text="Buy boosters"
-            x:Name="BoosterBtn" Clicked="BoosterBtn_Clicked" />
+            x:Name="BoosterBtn" Clicked="BoosterBtn_Clicked" 
+            BackgroundColor="#4FAA69" TextColor="#F9FAD0" FontSize="18" />
 
-        <Frame Grid.Row="1" BackgroundColor="#446677" CornerRadius="15"
+        <Frame Grid.Row="1" BackgroundColor="#446677" CornerRadius="15" BorderColor="Aquamarine"
+               HorizontalOptions="Center" VerticalOptions="Center"
                IsVisible="Collapse" IsEnabled="False" x:Name="ShopFrame" ZIndex="2">
-            <VerticalStackLayout Spacing="20">
-                <Label HorizontalOptions="Center"
-                    Text="Increase tap price using Dovboyob coins!" FontSize="30"
-                    TextColor="#cca700" LineBreakMode="WordWrap"/>
-                <Frame BackgroundColor="#226677" CornerRadius="12">
+            <VerticalStackLayout Spacing="20" HorizontalOptions="Center">
+                <Label Text="Increase tap price using Dovboyob coins!"
+                    FontSize="30" FontAttributes="Italic"
+                    TextColor="#F8FA7D" LineBreakMode="WordWrap" />
+                <Frame BackgroundColor="#446677" CornerRadius="12"
+                       BorderColor="AliceBlue" >
                     <HorizontalStackLayout HorizontalOptions="Center">
                         <Label 
-                            Text="Current tap price: " FontSize="18"
-                            TextColor="#cca700" />
+                            Text="Current tap price: " FontSize="18" FontAttributes="Bold"
+                            TextColor="#F9FAD0" />
                         <Label
-                            Text="{Binding DovboData.ClickValue}" FontSize="18"
-                            TextColor="#cca700" />
+                            Text="{Binding DovboData.ClickValue}" FontSize="18" FontAttributes="Bold"
+                            TextColor="#F9FAD0" />
                     </HorizontalStackLayout>
                 </Frame>
-                <Frame BackgroundColor="#226677" CornerRadius="12">
+                <Frame BackgroundColor="#226677" CornerRadius="12" BorderColor="AliceBlue" >
                     <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
                         <Label x:Name="PropositionLabel" LineBreakMode="WordWrap"                            
                             Text="+X to tap price just for XX DVB!" FontSize="22"
                             TextColor="#cca700" />
-                        <Button Text="Upgrade now" Padding="10" MinimumHeightRequest="60"
+                        <Button Text="Upgrade now" Padding="10" MinimumHeightRequest="70"
+                            BackgroundColor="#0B5520" TextColor="#F9FAD0" FontSize="18"
+                            BorderColor="#4FAA69" BorderWidth="2"
                             x:Name="BuyBtn" Clicked="BuyBtn_Clicked"/>
                     </VerticalStackLayout>
                 </Frame>

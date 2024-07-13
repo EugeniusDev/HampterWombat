@@ -15,7 +15,7 @@ namespace HampterWombat.ViewModels
         }
 
         [RelayCommand]
-        void IncrementCount()
+        void IncrementBalance()
         {
             DovboData.Balance += DovboData.ClickValue;
         }

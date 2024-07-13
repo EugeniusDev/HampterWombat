@@ -113,5 +113,11 @@ namespace HampterWombat
                     $"{price - viewModel.DovboData.Balance} DVB more!", "Ok");
             }
         }
+
+        private async void WombatImageBtn_Clicked(object sender, EventArgs e)
+        {
+            await WombatImageBtn.ScaleTo(1.2, 100);
+            await WombatImageBtn.ScaleTo(1.0, 100);
+        }
     }
 }
